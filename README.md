@@ -21,4 +21,17 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+manual bootstrapa w rails
+https://launchschool.com/blog/integrating-rails-and-bootstrap-part-1
+
+sass
+https://github.com/rails/sass-rails
+
+znaczniki css w bootratipie navbar
+https://getbootstrap.com/components/#navbar
+
+nested layouts
+http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts
+
+rails
+http://guides.rubyonrails.org/getting_started.html
