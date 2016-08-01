@@ -21,4 +21,33 @@
 
 fr:
   project_name: "Escole ino Bertoua"
-  home: "Homee"
+  home: "page d'accueil"
+  surname: "nom"
+  forename: "prénom"
+  sex: "sexe"
+  birth_date: "né le"
+  birth_place: "né à"
+  confession: "religion"
+  tribe: ethnie # Plemię
+  handicap: Handicap # Rodzaj upośledzenia
+  birth_act_number: "Acte de naissance"
+  name_of: "nom du"
+  father: "père"
+  occupation_of: "profession du"
+  contact_to: "Contact du"
+  mother: "la mère"
+  guardian: "tuteur" # opiekun
+  habitat: "habitat" # Miejsce zamieszkania
+  comments: "remarques" # Uwagi
+  archive_date: "archive" # Data archiwizacji
+  archive_reason: "archives notes" # Powód archiwizacji
+  description: "descriptin" # opis
+  school_year: "Année scolaire"
+  class: "classe"
+  amount_to_be_paid: "Montant à payer"
+  zaliczenie: "$%{num} Seq" # stopień na n-te zaliczenie
+  zaliczenie_notes: "$%{num) Seq notes" # uwagi do zaliczenia
+  trymestr: "$%{num}e Trim: # n-ty trymestr
+  trymestr_notes: "$%{num}e Trim notes" # Uwagi do n-tego trymestru
+  final_grade: "Note finale"
+  final_grade_notes": "Remarques finales"
