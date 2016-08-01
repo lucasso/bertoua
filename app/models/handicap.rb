@@ -1,0 +1,2 @@
+class Handicap < ApplicationRecord
+end
