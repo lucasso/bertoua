@@ -28,8 +28,8 @@ fr:
   birth_date: "né le"
   birth_place: "né à"
   confession: "religion"
-  tribe: ethnie # Plemię
-  handicap: Handicap # Rodzaj upośledzenia
+  tribe: "ethnie" # Plemię
+  handicap: "handicap" # Rodzaj upośledzenia
   birth_act_number: "Acte de naissance"
   name_of: "nom du"
   father: "père"
@@ -47,7 +47,7 @@ fr:
   amount_to_be_paid: "Montant à payer"
   zaliczenie: "$%{num} Seq" # stopień na n-te zaliczenie
   zaliczenie_notes: "$%{num) Seq notes" # uwagi do zaliczenia
-  trymestr: "$%{num}e Trim: # n-ty trymestr
+  trymestr: "$%{num}e Trim" # n-ty trymestr
   trymestr_notes: "$%{num}e Trim notes" # Uwagi do n-tego trymestru
   final_grade: "Note finale"
   final_grade_notes": "Remarques finales"
