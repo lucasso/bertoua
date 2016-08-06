@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bertoua</title>
+    <title><%= t 'project_name' %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -21,27 +21,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><%= t 'project_name' %></a>
+          <%= link_to t('project_name'), school_welcome_path, :class => "navbar-brand" %><!--<a class="navbar-brand" href="#"><%= t 'project_name' %></a>-->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#"><%= t 'home' %></a></li> <!-- TODO: do li dodaj class="active" -->
+
+<!-- TODO: do li dodaj class="active" 
+            <li><a href="#"><%= t 'home' %></a></li> 
             <li><a href="#about"><%= t 'students' %></a></li>
-            <li><a href="#contact"><%= t 'classes' %></a></li>
-<!-- przyklad dropdowna
+            <li><a href="#contact"><%= t 'classes' %></a></li>-->
+<!-- przyklad dropdowna-->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t 'students' %> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
+                <li><%= link_to t('all_students'), students_path %></li>
+                <li><%= link_to t('add_student'), new_student_path %></li>
+<!--
                 <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
+-->
               </ul>
             </li>
--->
+
           </ul>
 <!-- tutaj login i logout
           <ul class="nav navbar-nav navbar-right">

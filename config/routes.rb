@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :students
+  resources :confessions
+  resources :handicaps
+  resources :tribes
+  resources :adults  
+
   get 'school/welcome'
 
   get 'school/students'

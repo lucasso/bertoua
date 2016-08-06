@@ -1,9 +1,13 @@
 <div class="jumbotron">
   <h1>Ecole St. Jean-Baptiste Des Sourds-Muets</h1>
-  <p>Tutaj trzeba coś wypełnić. Np. powitanie albo krótkie info jak uzywać stronki.</p>
-  <p>Można kilka linijek tekstu wpisać</p>
+  <p>Bienvenue à la page d'administration</p>
+  <p>Actuellement, vous ne pouvez enregistrer de nouveaux élèves et modifier leurs données. Suivant des fonctionnalités telles que les qualités de stockage ou la gestion des années de l'école ne sont pas encore mises en œuvre.</p>
+<!-- Currently you can only register new pupils and edit their data. Next features like storing grades or school years management are not implemented yet. -->
   <p>
-    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">I dać jakiś ważny link &raquo;</a>
+    <%= link_to t('register_student'), new_student_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
+    <%= link_to "Page d'accueil de l'école publique", "http://sourds-bertoua.org/fr/", { :class => "btn btn-lg btn-primary", "role" => "button" } %>
+<!--
+    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">I dać jakiś ważny link &raquo;</a>-->
   </p>
 </div>
 

@@ -20,19 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  project_name: "Escole ino Bertoua"
-  home: "page d'accueil"
-  surname: "nom"
-  forename: "prénom"
-  sex: "sexe"
+  add_student: "Ajouter un nouvel élève"
+  all_students: "Tous les élèves"
+  birth_act_number: "Acte de naissance"
   birth_date: "né le"
   birth_place: "né à"
   confession: "religion"
-  tribe: "ethnie" # Plemię
-  handicap: "handicap" # Rodzaj upośledzenia
-  birth_act_number: "Acte de naissance"
-  name_of: "nom du"
   father: "père"
+  forename: "prénom"
+  handicap: "handicap" # Rodzaj upośledzenia
+  home: "page d'accueil"
+  name_of: "nom du"
+  project_name: "L'école à Bertoua"
+  register_student: "Inscription nouvel élève"
+  sex: "sexe"
+  submit: "Soumettre"
+  surname: "nom"
+  students: "Les élèves"
+  tribe: "ethnie" # Plemię
   occupation_of: "profession du"
   contact_to: "Contact du"
   mother: "la mère"
