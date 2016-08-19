@@ -1,16 +1,18 @@
 <h1><%= t('register_student') %></h1>
 
 
-<%= form_for @student, url: {action: "create"} do |f| %>
+<%= bootstrap_form_for @student, url: {action: "create"} do |f| %>
 
-  <div class="form-group">
-    <label for="student_forename"><%= t('forename').capitalize %></label>
-    <%= f.text_field :forename, { :class => "form-control" } %>
-  </div>
-  <div class="form-group">
-    <label for="student_surname"><%= t('surname').capitalize %></label>
-    <%= f.text_field :forename, { :class => "form-control" } %>
-  </div>
+    <%= f.text_field :forename, label: t('forename').capitalize %>
+    <%= f.text_field :surname, label: t('surname').capitalize %>
+    <%= f.collection_radio_buttons :sex, Student.sexes, :second, :first %>
+    <%= f.date_select :birth_date, label: t('birth_date').capitalize %>
+    <%= f.text_field :birth_place, label: t('birth_place').capitalize %>
+    <%= f.text_area :address, label: t('address').capitalize %>
+
+    <%= f.collection_select :confession_id, Confession.all, :id, :name, label: t('confession').capitalize %>
+    <%= f.collection_select :tribe_id, Tribe.all, :id, :name, label: t('tribe').capitalize %>
+
 
 
 <!--
@@ -35,31 +37,6 @@ t.string   "forename"
 -->
 
 
-  <%= f.submit t('submit'), { :class => "btn btn-default" } %>
+  <%= f.submit t('submit') %>
 <% end %>
 
-<br/>
-<br/>
-<br/>
-
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
