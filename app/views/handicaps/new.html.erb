@@ -1,2 +1,6 @@
-<h1>Handicaps#new</h1>
-<p>Find me in app/views/handicaps/new.html.erb</p>
+<h1><%= t('add_handicap') %></h1>
+<%= bootstrap_form_for @handicap, url: handicaps_path do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :name, label: t('name').capitalize %>
+    <%= f.submit t('submit') %>
+<% end %>

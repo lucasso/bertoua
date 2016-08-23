@@ -1,2 +1,7 @@
-<h1>Tribes#edit</h1>
-<p>Find me in app/views/tribes/edit.html.erb</p>
+<h1><%= t('rename_tribe')%></h1>
+
+<%= bootstrap_form_for @tribe, url: tribe_path(@tribe), method: :patch do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :name, label: t('name').capitalize %>
+    <%= f.submit t('rename') %>
+<% end %>

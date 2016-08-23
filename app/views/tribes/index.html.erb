@@ -1,2 +1,28 @@
-<h1>Tribes#index</h1>
-<p>Find me in app/views/tribes/index.html.erb</p>
+<h1><%= t('tribes').capitalize %></h1>
+<p>
+  <%= link_to t('add_tribe'), new_tribe_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
+</p>
+<% if @tribes.any? %>
+    <br/>
+    <p>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th><%= t('name').capitalize %></th>
+        <th><%= t('action') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @tribes.each do |tribe| %>
+          <tr>
+            <td><%= tribe.name %></td>
+            <td>
+              <%= link_to t('rename'), edit_tribe_path(tribe), { :class => "btn btn-md btn-link", "role" => "button" } %>
+              <%= link_to t('delete'), tribe_path(tribe), method: :delete, data: { :confirm => t('are_you_sure_delete')}, :class => "btn btn-md btn-link", "role" => "button" %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </p>
+<% end %>

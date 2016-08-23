@@ -1,2 +1,7 @@
-<h1>Confessions#edit</h1>
-<p>Find me in app/views/confessions/edit.html.erb</p>
+<h1><%= t('rename_religion')%></h1>
+
+<%= bootstrap_form_for @confession, url: confession_path(@confession), method: :patch do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :name, label: t('name').capitalize %>
+    <%= f.submit t('rename') %>
+<% end %>

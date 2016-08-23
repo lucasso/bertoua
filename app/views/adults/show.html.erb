@@ -1,2 +1,41 @@
-<h1>Adults#show</h1>
-<p>Find me in app/views/adults/show.html.erb</p>
+<h2><%= @adult.forename %> <%= @adult.surname %></h2>
+
+<p>
+<table class="table table-hover">
+  <tbody>
+  <tr>
+    <td><%= t('occupation') %></td>
+    <th scope="row"><%= @adult.occupation %></th>
+  </tr>
+  <tr>
+    <td><%= t('address') %></td>
+    <th scope="row"><%= @adult.address %></th>
+  </tr>
+  <tr>
+    <td><%= t('phone') %></td>
+    <th scope="row"><%= @adult.phone %></th>
+  </tr>
+  <tr>
+    <td><%= t('email') %></td>
+    <th scope="row"><%= @adult.email %></th>
+  </tr>
+  <tr>
+    <td><%= t('notes') %></td>
+    <th scope="row"><%= @adult.notes %></th>
+  </tr>
+  <tr>
+    <td><%= t('date_of_creation').capitalize %></td>
+    <th scope="row"><%= @adult.created_at %></th>
+  </tr>
+  <tr>
+    <td><%= t('date_of_update').capitalize %></td>
+    <th scope="row"><%= @adult.updated_at %></th>
+  </tr>
+  </tbody>
+</table>
+</p>
+
+<p>
+  <%= link_to t('edit'), edit_adult_path(@adult), { :class => "btn btn-info", "role" => "button" } %>
+  <%= link_to t('delete'), adult_path(@adult), { method: :delete, data: {:confirm => t('are_you_sure_delete')}, :class => "btn btn-danger", "role" => "button" } %>
+</p>

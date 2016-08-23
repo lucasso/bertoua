@@ -1,2 +1,28 @@
-<h1>Handicaps#index</h1>
-<p>Find me in app/views/handicaps/index.html.erb</p>
+<h1><%= t('handicaps').capitalize %></h1>
+<p>
+  <%= link_to t('add_handicap'), new_handicap_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
+</p>
+<% if @handicaps.any? %>
+    <br/>
+    <p>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th><%= t('name').capitalize %></th>
+        <th><%= t('action') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @handicaps.each do |handicap| %>
+          <tr>
+            <td><%= handicap.name %></td>
+            <td>
+              <%= link_to t('rename'), edit_handicap_path(handicap), { :class => "btn btn-md btn-link", "role" => "button" } %>
+              <%= link_to t('delete'), handicap_path(handicap), method: :delete, data: { :confirm => t('are_you_sure_delete')}, :class => "btn btn-md btn-link", "role" => "button" %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </p>
+<% end %>

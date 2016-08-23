@@ -1,0 +1,12 @@
+<%= bootstrap_form_for @adult do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :forename, label: t('forename').capitalize %>
+    <%= f.text_field :surname, label: t('surname').capitalize %>
+    <%= f.text_field :occupation, label: t('occupation').capitalize %>
+    <%= f.text_field :address, label: t('address').capitalize %>
+    <%= f.text_field :phone, label: t('phone').capitalize %>
+    <%= f.email_field :email, label: t('email').capitalize %>
+    <%= f.text_area :notes, label: t('notes').capitalize %>
+    <%= f.submit t('submit') %>
+<% end %>
+

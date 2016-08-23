@@ -1,0 +1,13 @@
+<%= bootstrap_form_for @student do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :forename, label: t('forename').capitalize %>
+    <%= f.text_field :surname, label: t('surname').capitalize %>
+    <%= f.collection_radio_buttons :sex, Student.sexes, :first, :first %>
+    <%= f.date_select :birth_date, {label: t('birth_date').capitalize, :start_year => Date.today().year - 25, :end_year => Date.today().year} %>
+    <%= f.text_field :birth_place, label: t('birth_place').capitalize %>
+    <%= f.text_field :birth_act_number, label: t('birth_act_number').capitalize %>
+    <%= f.text_area :address, label: t('address').capitalize %>
+    <%= f.collection_select :confession_id, Confession.order(:name).all, :id, :name, label: t('confession').capitalize %>
+    <%= f.collection_select :tribe_id, Tribe.order(:name).all, :id, :name, label: t('tribe').capitalize %>
+    <%= f.submit t('submit') %>
+<% end %>

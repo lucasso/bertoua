@@ -1,2 +1,40 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<h1><%= t('all_students') %></h1>
+
+<p>
+  <%= link_to t('add_student'), new_student_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
+</p>
+<% if @students.any? %>
+    <br/>
+    <p>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= t('forename').capitalize %></th>
+        <th><%= t('surname').capitalize %></th>
+        <th><%= t('sex').capitalize %></th>
+        <th><%= t('tribe').capitalize %></th>
+        <th><%= t('confession').capitalize %></th>
+        <th><%= t('birth_year').capitalize %></th>
+        <th><%= t('action') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @students.each do |student| %>
+          <tr>
+            <td><%= student.forename %></td>
+            <td><%= student.surname %></td>
+            <td><%= student.sex %></td>
+            <td><%= student.tribe.name %></td>
+            <td><%= student.confession.name %></td>
+            <td><%= student.birth_date.year %></td>
+            <td>
+              <%= link_to t('more_details'), student_path(student), { :class => "btn btn-md btn-link", "role" => "button" } %>
+              <%= link_to t('edit'), edit_student_path(student), { :class => "btn btn-md btn-link", "role" => "button" } %>
+              <%= link_to t('delete'), student_path(student), { method: :delete, data: {:confirm => t('are_you_sure_delete')}, :class => "btn btn-md btn-link", "role" => "button" } %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </p>
+<% end %>

@@ -1,2 +1,6 @@
-<h1>Tribes#new</h1>
-<p>Find me in app/views/tribes/new.html.erb</p>
+<h1><%= t('add_tribe') %></h1>
+<%= bootstrap_form_for @tribe, url: tribes_path do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :name, label: t('name').capitalize %>
+    <%= f.submit t('submit') %>
+<% end %>

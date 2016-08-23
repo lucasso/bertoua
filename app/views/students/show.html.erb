@@ -1,2 +1,53 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h2><%= @student.forename %> <%= @student.surname %></h2>
+
+<p>
+<table class="table table-hover">
+  <tbody>
+  <tr>
+    <td><%= t('sex').capitalize %></td>
+    <th scope="row"><%= @student.sex %></th>
+  </tr>
+  <tr>
+    <td><%= t('birth_date').capitalize %></td>
+    <th scope="row"><%= @student.birth_date %></th>
+  </tr>
+  <tr>
+    <td><%= t('birth_place').capitalize %></td>
+    <th scope="row"><%= @student.birth_place %></th>
+  </tr>
+  <tr>
+    <td><%= t('confession').capitalize %></td>
+    <th scope="row"><%= @student.confession.name %></th>
+  </tr>
+  <tr>
+    <td><%= t('tribe').capitalize %></td>
+    <th scope="row"><%= @student.tribe.name %></th>
+  </tr>
+  <tr>
+    <td><%= t('birth_act_number').capitalize %></td>
+    <th scope="row"><%= @student.birth_act_number %></th>
+  </tr>
+  <tr>
+    <td><%= t('address').capitalize %></td>
+    <th scope="row"><%= @student.address %></th>
+  </tr>
+  <tr>
+    <td><%= t('date_of_creation').capitalize %></td>
+    <th scope="row"><%= @student.created_at %></th>
+  </tr>
+  <tr>
+    <td><%= t('date_of_update').capitalize %></td>
+    <th scope="row"><%= @student.updated_at %></th>
+  </tr>
+  <tr>
+    <td><%= t('date_of_archiving').capitalize %></td>
+    <th scope="row"><%= @student.archived_at %></th>
+  </tr>
+  </tbody>
+</table>
+</p>
+
+<p>
+  <%= link_to t('edit'), edit_student_path(@student), { :class => "btn btn-info", "role" => "button" } %>
+  <%= link_to t('delete'), student_path(@student), { method: :delete, data: {:confirm => t('are_you_sure_delete')}, :class => "btn btn-danger", "role" => "button" } %>
+</p>

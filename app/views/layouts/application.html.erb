@@ -36,10 +36,17 @@
               <ul class="dropdown-menu">
                 <li><%= link_to t('all_students'), students_path %></li>
                 <li><%= link_to t('add_student'), new_student_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to t('all_adults'), adults_path %></li>
+                <li><%= link_to t('add_adult'), new_adult_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to t('confessions').capitalize, confessions_path %></li>
+                <li><%= link_to t('handicaps').capitalize, handicaps_path %></li>
+                <li><%= link_to t('tribes').capitalize, tribes_path %></li>
 <!--
                 <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
+
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
 -->

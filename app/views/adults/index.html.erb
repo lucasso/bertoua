@@ -1,2 +1,33 @@
-<h1>Adults#index</h1>
-<p>Find me in app/views/adults/index.html.erb</p>
+<h1><%= t('adults').capitalize %></h1>
+<p>
+  <%= link_to t('add_adult'), new_adult_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
+</p>
+<% if @adults.any? %>
+    <br/>
+    <p>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= t('forename').capitalize %></th>
+        <th><%= t('surname').capitalize %></th>
+        <th><%= t('address').capitalize %></th>
+        <th><%= t('action') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @adults.each do |adult| %>
+          <tr>
+            <td><%= adult.forename %></td>
+            <td><%= adult.surname %></td>
+            <td><%= adult.address %></td>
+            <td>
+              <%= link_to t('more_details'), adult_path(adult), { :class => "btn btn-md btn-link", "role" => "button" } %>
+              <%= link_to t('edit'), edit_adult_path(adult), { :class => "btn btn-md btn-link", "role" => "button" } %>
+              <%= link_to t('delete'), adult_path(adult), { method: :delete, data: {:confirm => t('are_you_sure_delete')}, :class => "btn btn-md btn-link", "role" => "button" } %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </p>
+<% end %>

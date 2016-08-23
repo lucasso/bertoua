@@ -1,2 +1,6 @@
-<h1>Confessions#new</h1>
-<p>Find me in app/views/confessions/new.html.erb</p>
+<h1><%= t('add_confession') %></h1>
+<%= bootstrap_form_for @confession, url: confessions_path do |f| %>
+    <%= f.alert_message t('fix_errors') %>
+    <%= f.text_field :name, label: t('name').capitalize %>
+    <%= f.submit t('submit') %>
+<% end %>
