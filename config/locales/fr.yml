@@ -51,6 +51,7 @@ fr:
   forename: "prénom"
   handicap: "handicap" # Rodzaj upośledzenia
   handicaps: "handicaps"
+  handicap_not_removed: "Handicap ne pouvait pas avoir été supprimé, car il y a des étudiants ayant elle." # Handicap could not have been removed, because there are students having it.
   home: "page d'accueil"
   more_details: "plus de détails"
   name: "nom"

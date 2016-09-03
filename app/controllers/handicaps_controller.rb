@@ -35,7 +35,10 @@ class HandicapsController < ApplicationController
 
   def destroy
     @handicap = Handicap.find(params[:id])
-    @handicap.destroy
+
+    if not @handicap.destroy
+      flash[:error] = t "handicap_not_removed"
+    end
 
     redirect_to handicaps_path
   end

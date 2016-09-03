@@ -1,4 +1,4 @@
-<%= bootstrap_form_for @student do |f| %>
+<%= bootstrap_form_for setup_student(@student) do |f| %>
     <%= f.alert_message t('fix_errors') %>
     <%= f.text_field :forename, label: t('forename').capitalize %>
     <%= f.text_field :surname, label: t('surname').capitalize %>
@@ -9,5 +9,14 @@
     <%= f.text_area :address, label: t('address').capitalize %>
     <%= f.collection_select :confession_id, Confession.order(:name).all, :id, :name, label: t('confession').capitalize %>
     <%= f.collection_select :tribe_id, Tribe.order(:name).all, :id, :name, label: t('tribe').capitalize %>
+    <div class = "input-group">
+      <label><%= t("handicaps").capitalize %></label>
+      <%= f.fields_for :student_handicaps do |ff| %>
+          <% logger.info ff.object.pretty_print_inspect %>
+          <%= ff.check_box :_destroy, {:checked => ff.object.persisted?, label: ff.object.handicap.name}, '0', '1' %>
+          <%= ff.hidden_field :handicap_id %>
+      <% end %>
+    </div>
     <%= f.submit t('submit') %>
+
 <% end %>

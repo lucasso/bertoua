@@ -24,6 +24,12 @@
     <th scope="row"><%= @student.tribe.name %></th>
   </tr>
   <tr>
+    <td><%= t('handicaps').capitalize %></td>
+    <th scope="row">
+      <%= (@student.handicaps.map {|hcp| hcp.name }).join(", ") %>
+    </th>
+  </tr>
+  <tr>
     <td><%= t('birth_act_number').capitalize %></td>
     <th scope="row"><%= @student.birth_act_number %></th>
   </tr>
