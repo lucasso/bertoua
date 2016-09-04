@@ -28,6 +28,7 @@ fr:
   add_tribe: "Ajouter nouvelle tribu"
   address: adresse
   adult: "adulte"
+  adult_not_removed: "%{name} prend soin de certains étudiants, de sorte qu'il ne peut pas être enlevé." # ... takes care about some student, so it cannot be removed.
   adults: "adultes"
   all_adults: "Tous les adultes"
   all_students: "Tous les élèves"
@@ -38,6 +39,7 @@ fr:
   birth_year: "année de naissance"
   confession: "religion"
   confessions: "religions"
+  confession_not_removed: "Religion ne pouvait pas avoir été supprimé, car il y a des étudiants qui lui appartiennent." # Religion could not have been removed, because there are students belonging to it.
   date_of_creation: "date de création"
   date_of_update: "date de dernière modification"
   date_of_archiving: "date d'archivage"
@@ -73,6 +75,7 @@ fr:
   surname: "nom"
   students: "Les élèves"
   tribe: "tribu" # Plemię
+  tribe_not_removed: "Tribe ne pouvait pas avoir été supprimé, car il y a des étudiants qui lui appartiennent."
   tribes: "tribus"
   contact_to: "Contact du"
   mother: "la mère"

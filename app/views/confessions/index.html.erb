@@ -1,4 +1,7 @@
 <h1><%= t('confessions').capitalize %></h1>
+<% if not flash[:error].blank? %>
+    <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
 <p>
 <%= link_to t('add_confession'), new_confession_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
 </p>

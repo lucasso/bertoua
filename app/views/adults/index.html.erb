@@ -1,4 +1,7 @@
 <h1><%= t('adults').capitalize %></h1>
+<% if not flash[:error].blank? %>
+    <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
 <p>
   <%= link_to t('add_adult'), new_adult_path, { :class => "btn btn-lg btn-primary", "role" => "button" } %>
 </p>
@@ -8,8 +11,9 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th><%= t('forename').capitalize %></th>
+        <th></th>
         <th><%= t('surname').capitalize %></th>
+        <th><%= t('forename').capitalize %></th>
         <th><%= t('address').capitalize %></th>
         <th><%= t('action') %></th>
       </tr>
@@ -17,8 +21,9 @@
       <tbody>
       <% @adults.each do |adult| %>
           <tr>
-            <td><%= adult.forename %></td>
+            <td><small><%= adult.title %></small></td>
             <td><%= adult.surname %></td>
+            <td><%= adult.forename %></td>
             <td><%= adult.address %></td>
             <td>
               <%= link_to t('more_details'), adult_path(adult), { :class => "btn btn-md btn-link", "role" => "button" } %>

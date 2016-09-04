@@ -35,7 +35,9 @@ class ConfessionsController < ApplicationController
 
   def destroy
     @confession = Confession.find(params[:id])
-    @confession.destroy
+    if not @confession.destroy
+      flash[:error] = t "confession_not_removed"
+    end
 
     redirect_to confessions_path
   end

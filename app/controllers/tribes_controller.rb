@@ -35,7 +35,10 @@ class TribesController < ApplicationController
 
   def destroy
     @tribe = Tribe.find(params[:id])
-    @tribe.destroy
+
+    if not @tribe.destroy
+      flash[:error] = t "tribe_not_removed"
+    end
 
     redirect_to tribes_path
   end

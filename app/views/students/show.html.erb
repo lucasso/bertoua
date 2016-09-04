@@ -38,6 +38,18 @@
     <th scope="row"><%= @student.address %></th>
   </tr>
   <tr>
+    <td><%= t('mother').capitalize %></td>
+    <th scope="row"><%= @student.mother&.short_presentation %></th>
+  </tr>
+  <tr>
+    <td><%= t('father').capitalize %></td>
+    <th scope="row"><%= @student.father&.short_presentation %></th>
+  </tr>
+  <tr>
+    <td><%= t('guardian').capitalize %></td>
+    <th scope="row"><%= @student.guardian&.short_presentation %></th>
+  </tr>
+  <tr>
     <td><%= t('date_of_creation').capitalize %></td>
     <th scope="row"><%= @student.created_at %></th>
   </tr>

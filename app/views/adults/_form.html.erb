@@ -2,6 +2,7 @@
     <%= f.alert_message t('fix_errors') %>
     <%= f.text_field :forename, label: t('forename').capitalize %>
     <%= f.text_field :surname, label: t('surname').capitalize %>
+    <%= f.collection_radio_buttons :sex, Adult.sexes, :first, :first %>
     <%= f.text_field :occupation, label: t('occupation').capitalize %>
     <%= f.text_field :address, label: t('address').capitalize %>
     <%= f.text_field :phone, label: t('phone').capitalize %>

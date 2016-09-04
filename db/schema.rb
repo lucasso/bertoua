@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819191405) do
+ActiveRecord::Schema.define(version: 20160903233258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160819191405) do
     t.text     "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "sex"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -155,6 +156,9 @@ ActiveRecord::Schema.define(version: 20160819191405) do
   add_foreign_key "student_grades", "subjects"
   add_foreign_key "student_handicaps", "handicaps"
   add_foreign_key "student_handicaps", "students"
+  add_foreign_key "students", "adults", column: "father_id"
+  add_foreign_key "students", "adults", column: "guardian_id"
+  add_foreign_key "students", "adults", column: "mother_id"
   add_foreign_key "students", "confessions"
   add_foreign_key "students", "tribes"
 end
