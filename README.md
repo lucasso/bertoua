@@ -35,3 +35,6 @@ http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts
 
 rails
 http://guides.rubyonrails.org/getting_started.html
+
+dodawanie imagemagick do heroku
+heroku buildpacks:add --index 1 https://github.com/ello/heroku-buildpack-imagemagick

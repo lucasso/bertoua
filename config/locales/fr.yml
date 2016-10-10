@@ -44,6 +44,7 @@ fr:
   date_of_update: "date de dernière modification"
   date_of_archiving: "date d'archivage"
   delete: "effacer"
+  details: "détails"
   edit: "modifier"
   edit_adult_data: "modifier des données de l'adulte"
   edit_student_data: "modifier des données de l'étudiant"

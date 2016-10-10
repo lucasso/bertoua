@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '~> 6.4'
+gem 'paperclip', '~> 5.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

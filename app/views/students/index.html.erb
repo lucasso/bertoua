@@ -9,6 +9,7 @@
     <table class="table table-striped">
       <thead>
       <tr>
+	<th></th>
         <th><%= t('forename').capitalize %></th>
         <th><%= t('surname').capitalize %></th>
         <th><%= t('sex').capitalize %></th>
@@ -21,6 +22,7 @@
       <tbody>
       <% @students.each do |student| %>
           <tr>
+	    <td><%= image_tag student.photo.url(:thumb) %></td>
             <td><%= student.forename %></td>
             <td><%= student.surname %></td>
             <td><%= student.sex %></td>

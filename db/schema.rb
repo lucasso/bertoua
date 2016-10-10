@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903233258) do
+ActiveRecord::Schema.define(version: 20161010201146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,9 +126,13 @@ ActiveRecord::Schema.define(version: 20160903233258) do
     t.string   "address"
     t.datetime "archived_at"
     t.string   "archiving_reason"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "birth_act_number"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["confession_id"], name: "index_students_on_confession_id", using: :btree
     t.index ["tribe_id"], name: "index_students_on_tribe_id", using: :btree
   end

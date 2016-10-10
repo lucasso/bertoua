@@ -1,5 +1,10 @@
+<%= image_tag @student.photo.url(:medium), :class => "img_medium" %>
 <h2><%= @student.forename %> <%= @student.surname %></h2>
-
+<p>
+  <%= link_to t('edit'), edit_student_path(@student), { :class => "btn btn-info", "role" => "button" } %>
+  <%= link_to t('delete'), student_path(@student), { method: :delete, data: {:confirm => t('are_you_sure_delete')}, :class => "btn btn-danger", "role" => "button" } %>
+</p>
+<h4 class="clean_margin"><%= t('details').capitalize %></h4>
 <p>
 <table class="table table-hover">
   <tbody>
@@ -63,9 +68,4 @@
   </tr>
   </tbody>
 </table>
-</p>
-
-<p>
-  <%= link_to t('edit'), edit_student_path(@student), { :class => "btn btn-info", "role" => "button" } %>
-  <%= link_to t('delete'), student_path(@student), { method: :delete, data: {:confirm => t('are_you_sure_delete')}, :class => "btn btn-danger", "role" => "button" } %>
 </p>
