@@ -42,18 +42,33 @@
     <td><%= t('address').capitalize %></td>
     <th scope="row"><%= @student.address %></th>
   </tr>
+  <% if not @student.mother_id.nil? %>
   <tr>
     <td><%= t('mother').capitalize %></td>
-    <th scope="row"><%= @student.mother&.short_presentation %></th>
+    <th scope="row">
+      <%= @student.mother&.short_presentation %>
+      <%= link_to t('more_details'), adult_path(@student.mother), { :class => "btn btn-md btn-link", "role" => "button" } %>
+    </th>
   </tr>
+  <% end %>
+  <% if not @student.father_id.nil? %>
   <tr>
     <td><%= t('father').capitalize %></td>
-    <th scope="row"><%= @student.father&.short_presentation %></th>
+    <th scope="row">
+      <%= @student.father&.short_presentation %>
+      <%= link_to t('more_details'), adult_path(@student.father), { :class => "btn btn-md btn-link", "role" => "button" } %>
+    </th>
   </tr>
+  <% end %>
+  <% if not @student.guardian_id.nil? %>
   <tr>
     <td><%= t('guardian').capitalize %></td>
-    <th scope="row"><%= @student.guardian&.short_presentation %></th>
+    <th scope="row">
+      <%= @student.guardian&.short_presentation %>
+      <%= link_to t('more_details'), adult_path(@student.guardian), { :class => "btn btn-md btn-link", "role" => "button" } %>
+    </th>
   </tr>
+  <% end %>
   <tr>
     <td><%= t('date_of_creation').capitalize %></td>
     <th scope="row"><%= @student.created_at %></th>
